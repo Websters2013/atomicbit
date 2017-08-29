@@ -1,4 +1,8 @@
 .site {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   font-size: 100px;
   min-width: 320px;
   @include prompt;
@@ -25,6 +29,12 @@
 
 @media (min-width: $desktop) {
   .site {
+
+    &__header{
+      position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
 
   }
 }

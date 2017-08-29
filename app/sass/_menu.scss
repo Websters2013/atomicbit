@@ -123,13 +123,43 @@
 }
 
 @media (min-width: $tablet-portrait) {
-  .site {
+  .menu {
 
   }
 }
 
 @media (min-width: $desktop) {
-  .site {
+  .menu {
+    position: relative;
+    width: auto;
+    padding: 0;
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    -webkit-transform: translateX( 0 );
+    transform: translateX( 0 );
+
+    > ul{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__item{
+
+      &:before{
+        display: none;
+      }
+
+    }
+
+    &-mobile-btn{
+      display: none;
+    }
+
+    &__close{
+      display: none!important;
+    }
 
   }
 }
