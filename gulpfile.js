@@ -26,20 +26,8 @@ let paths = {
         {
             dist: 'index.min.js',
             contains: [
+                'app/js/jquery.main.js',
                 'app/js/jquery.index.js'
-            ]
-        },
-        {
-            dist: 'ui.min.js',
-            contains: [
-                'app/js/jquery.popup.js',
-                'app/js/jquery.websters-select.js'
-            ]
-        },
-        {
-            dist: 'tabs.min.js',
-            contains: [
-                'app/js/jquery.tabs.js'
             ]
         }
     ],

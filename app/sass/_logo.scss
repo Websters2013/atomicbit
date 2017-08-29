@@ -1,16 +1,16 @@
-.site {
-  @include prompt;
+.logo {
+  display: none;
 }
 
 @media (min-width: $tablet-portrait) {
-  .site {
+  .logo {
 
   }
 }
 
 @media (min-width: $desktop) {
-  .site {
-
+  .logo {
+    display: none;
   }
 }
 

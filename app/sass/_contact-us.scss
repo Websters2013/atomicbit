@@ -1,0 +1,50 @@
+.contact-us {
+
+  &-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    font-size: 0.13em;
+    background: rgb(81,76,227);
+    background: -moz-linear-gradient(-45deg, rgba(81,76,227,1) 0%, rgba(76,200,246,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+    background: linear-gradient(135deg, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#514ce3', endColorstr='#4cc8f6',GradientType=1 );
+    text-transform: uppercase;
+
+    & > span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 9px 20px;
+      background-color: #fff;
+
+      span{
+        background: rgb(81,76,227);
+        background: -moz-linear-gradient(left, rgba(81,76,227,1) 0%, rgba(76,200,246,1) 100%);
+        background: -webkit-linear-gradient(left, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+        background: linear-gradient(to right, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#514ce3', endColorstr='#4cc8f6',GradientType=1 );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+    }
+
+  }
+
+}
+
+@media (min-width: $tablet-portrait) {
+  .contact-us {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .contact-us {
+
+  }
+}
+

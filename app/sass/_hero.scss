@@ -1,0 +1,24 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px 22px;
+  font-size: 0.16em;
+  font-weight: 100;
+  color: #6C798B;
+  text-align: center;
+}
+
+@media (min-width: $tablet-portrait) {
+  .hero {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .hero {
+
+  }
+}
+

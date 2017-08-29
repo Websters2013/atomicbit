@@ -3,6 +3,18 @@
   min-width: 320px;
   @include prompt;
   overflow: hidden;
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 22px;
+  }
+
 }
 
 @media (min-width: $tablet-portrait) {

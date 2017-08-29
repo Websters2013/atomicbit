@@ -1,9 +1,15 @@
 .sub-menu {
-  margin: 51px 0 54px;
+  margin: 49px 0 52px;
 
   &__item{
+    margin: 0 18px;
+    font-size: .182em;
+    line-height: 21px;
     width: auto!important;
-    font-size: 16px;
+  }
+
+  &__swiper{
+    padding-left: 28px;
   }
 
 }
