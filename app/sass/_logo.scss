@@ -1,0 +1,16 @@
+.site {
+  @include prompt;
+}
+
+@media (min-width: $tablet-portrait) {
+  .site {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .site {
+
+  }
+}
+

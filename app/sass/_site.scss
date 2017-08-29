@@ -1,0 +1,19 @@
+.site {
+  font-size: 100px;
+  min-width: 320px;
+  @include prompt;
+  overflow: hidden;
+}
+
+@media (min-width: $tablet-portrait) {
+  .site {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .site {
+
+  }
+}
+

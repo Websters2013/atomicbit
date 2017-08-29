@@ -1,0 +1,75 @@
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 102px 0 20px 25px;
+  @include prompt;
+  background-color: rgba(255,255,255,.9);
+  font-weight: 300;
+
+  a{
+    color: #6C798B;
+  }
+
+  li{
+    margin-bottom: 51px;
+  }
+
+  &__item{
+    position: relative;
+    padding: 0 25px;
+    font-size: 0.24em;
+
+    &:before{
+      position: absolute;
+      top: calc( 50% - 1px );
+      right: 100%;
+      content: '';
+      height: 2px;
+      width: 50px;
+      background-color: #514CE3;
+      opacity: 0;
+    }
+
+  }
+
+  .active{
+    color: #514CE3;
+
+    &:before{
+      opacity: 1;
+    }
+
+  }
+
+  &__close{
+    position: relative;
+    width: 11px;
+    height: 11px;
+
+    &:before,
+    &:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      background-color: #6C798B;
+      content: '';
+    }
+
+  }
+
+}
+
+@media (min-width: $tablet-portrait) {
+  .site {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .site {
+
+  }
+}
