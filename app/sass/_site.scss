@@ -9,13 +9,21 @@
   overflow: hidden;
 
   &__header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 20px 22px;
+
+    &-wrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  }
+
+  &__footer{
     padding: 20px 22px;
   }
 
@@ -32,8 +40,20 @@
 
     &__header{
       position: relative;
-      max-width: 1440px;
-      margin: 0 auto;
+      padding: 50px calc( 50% - 655px ) 20px;
+
+      &-wrap{
+        position: relative;
+        justify-content: flex-end;
+      }
+
+    }
+
+    &__footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px calc( 50% - 655px ) 20px;
     }
 
   }

@@ -23,5 +23,7 @@
 @media (min-width: $desktop) {
   .sub-menu {
     position: absolute;
+    opacity: 0;
+    visibility: hidden;
   }
 }
