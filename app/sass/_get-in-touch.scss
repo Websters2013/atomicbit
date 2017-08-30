@@ -1,0 +1,26 @@
+.get-in-touch {
+
+  a{
+    font-size: 14px;
+    color: #6C798B;
+  }
+
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+@media (min-width: $tablet-portrait) {
+  .get-in-touch {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .get-in-touch {
+
+  }
+}
+

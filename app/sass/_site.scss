@@ -1,18 +1,29 @@
 .site {
-  overflow: hidden;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 100px;
   min-width: 320px;
   @include prompt;
-  font-size: 100px;
+  overflow: hidden;
 
   &__header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 20px 22px;
+
+    &-wrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  }
+
+  &__footer{
     padding: 20px 22px;
   }
 
@@ -26,6 +37,24 @@
 
 @media (min-width: $desktop) {
   .site {
+
+    &__header{
+      position: relative;
+      padding: 50px calc( 50% - 655px ) 20px;
+
+      &-wrap{
+        position: relative;
+        justify-content: flex-end;
+      }
+
+    }
+
+    &__footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px calc( 50% - 655px ) 20px;
+    }
 
   }
 }

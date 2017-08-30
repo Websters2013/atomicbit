@@ -45,6 +45,62 @@
 @media (min-width: $desktop) {
   .contact-us {
 
+    &-btn{
+      padding: 1px;
+      letter-spacing: 1px;
+      font-size: 0.14em;
+
+      &:hover{
+
+        & > span{
+
+          &:before{
+            transform: scale(1, 1);
+            transform-origin: left center;
+          }
+
+          span{
+            background: #fff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+        }
+
+      }
+
+      & > span {
+        position: relative;
+        padding: 14px 35px;
+
+        span{
+          position: relative;
+          z-index: 1;
+          -webkit-transition: background .3s ease;
+          transition: background .3s ease;
+        }
+
+        &:before{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          content: '';
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: scale(0, 1);
+          transform-origin: right center;
+          background: rgb(81,76,227);
+          background: -moz-linear-gradient(-45deg, rgba(81,76,227,1) 0%, rgba(76,200,246,1) 100%);
+          background: -webkit-linear-gradient(-45deg, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+          background: linear-gradient(135deg, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#514ce3', endColorstr='#4cc8f6',GradientType=1 );
+        }
+
+      }
+
+    }
+
   }
 }
 

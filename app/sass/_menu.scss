@@ -123,13 +123,78 @@
 }
 
 @media (min-width: $tablet-portrait) {
-  .site {
+  .menu {
 
   }
 }
 
 @media (min-width: $desktop) {
-  .site {
+  .menu {
+    position: relative;
+    width: auto;
+    margin-right: 36px;
+    padding: 0;
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    -webkit-transform: translateX( 0 );
+    transform: translateX( 0 );
+
+    > ul{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      li{
+        margin-bottom: 0;
+      }
+
+    }
+
+    &__item{
+      margin: 0 26.8px;
+      padding: 15px 0;
+      font-size: 0.14em;
+
+      &:before{
+        top: auto;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: auto;
+        background-color: #6C798B;
+        opacity: 1;
+        -webkit-transition: right .3s ease;
+        transition: right .3s ease;
+      }
+
+      &:hover{
+
+        &:before{
+          right: 0;
+        }
+
+      }
+
+    }
+
+    .active{
+
+      &:before{
+        right: 0;
+        background-color: #514CE3;
+      }
+
+    }
+
+    &-mobile-btn{
+      display: none;
+    }
+
+    &__close{
+      display: none!important;
+    }
 
   }
 }
