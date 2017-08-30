@@ -1,0 +1,57 @@
+/*---------- services ----------*/
+.services {
+
+  &__head {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    margin-bottom: 72px;
+
+    img {
+      display: block;
+      @include absoluteCenter();
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__layout {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    margin-bottom: 72px;
+
+    img {
+      display: block;
+      @include absoluteCenter();
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  p {
+    color: #6C798B;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .services {
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .services {
+
+  }
+}
+/*---------- /services ---------*/
+

@@ -1,8 +1,9 @@
 .site {
-  font-size: 100px;
+  overflow: hidden;
+  min-height: 100vh;
   min-width: 320px;
   @include prompt;
-  overflow: hidden;
+  font-size: 100px;
 
   &__header{
     display: flex;
