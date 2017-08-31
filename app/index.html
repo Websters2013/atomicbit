@@ -97,7 +97,7 @@
                 <!-- /menu -->
 
                 <!-- contact-us -->
-                <a href="#" class="contact-us-btn"><span><span>Contact us</span></span></a>
+                <a href="#" class="contact-us-btn popup__open" data-popup="contact-us"><span><span>Contact us</span></span></a>
                 <!-- /contact-us -->
 
             </div>
@@ -109,7 +109,38 @@
         <!-- hero -->
         <div class="hero">
 
-            The dawn of a New Era in digital marketing
+            <!-- hero__wrap -->
+            <div class="hero__wrap">
+
+                <div class="hero__logo">
+
+                    <!-- hero__logo -->
+                    <div class="hero__logo-img">
+                        <img src="img/hero-logo.png" alt="img"/>
+                    </div>
+                    <!-- /hero__logo -->
+
+                    <!-- hero__logo-name -->
+                    <div class="hero__logo-name">
+                        <img src="img/hero-logo-name.png" alt="img"/>
+                    </div>
+                    <!-- /hero__logo-name -->
+
+                </div>
+
+
+                <!-- hero__title -->
+                <div class="hero__title">
+                    The dawn of a New Era in digital marketing
+                </div>
+                <!-- /hero__title -->
+
+                <a href="#" class="hero__skip">
+                    scroll
+                </a>
+
+            </div>
+            <!-- /hero__wrap -->
 
         </div>
         <!-- /hero -->
@@ -212,7 +243,38 @@
         <div class="popup__wrap">
 
             <!-- popup__content -->
-            <div class="popup__content popup__text">
+            <div class="popup__content popup__contact-us">
+
+                <!-- contact-us -->
+                <div class="contact-us">
+
+                    <div class="contact-us__title">
+                        <h2>Get in Touch</h2>
+                        <span>Send Us a Letter</span>
+                    </div>
+
+                    <!-- contact-us__form -->
+                    <form method="get" class="contact-us__form">
+                        <input type="text" placeholder="First Name"/>
+                        <input type="text" placeholder="Last Name"/>
+                        <input type="text" placeholder="Email"/>
+                        <input type="text" placeholder="Phone Number"/>
+                        <input type="text" placeholder="Company"/>
+                        <input type="text" placeholder="Website"/>
+                        <select>
+                            <option value="0">Service I’m interested in</option>
+                            <option value="1">Website</option>
+                            <option value="2    ">Website</option>
+                        </select>
+                        <textarea placeholder="Project scope"></textarea>
+
+                        <button type="submit">submit</button>
+
+                    </form>
+                    <!-- /contact-us__form -->
+
+                </div>
+                <!-- /contact-us -->
 
             </div>
             <!-- /popup__content -->
