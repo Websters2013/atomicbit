@@ -66,8 +66,6 @@
         var _self = this,
             _obj = obj,
             _window = $( window ),
-            _footer = $( '.site__footer' ),
-            _footerLogoTop = _footer.find( '.site__footer-logo' ),
             _canUseSmoothScroll = true;
 
         //private methods
@@ -79,12 +77,6 @@
                         var scrollTop = $(window).scrollTop();
 
                         _move( scrollTop );
-
-                        if ( ( _footerLogoTop.offset().top - scrollTop ) < $(window).height() * 1.1 ) {
-                            _footer.addClass( 'is-inview' );
-                        } else {
-                            _footer.removeClass( 'is-inview' );
-                        }
 
                     },
                     'mousewheel': function( event ) {
@@ -108,26 +100,34 @@
             },
             _move = function( scrollTop ){
 
-                $('.hero__title').each( function (i) {
+                $('.services__title').each( function () {
                     var elem = $(this),
-                        koefX = .8;
+                        koefX = .2;
 
-                    switch ( i ) {
-                        case 0:
-                            elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, 0px )',
-                                'transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, 0px )'
-                            } );
-                            break;
-                        case 1:
-                            elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, 0px )',
-                                'transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, 0px )'
-                            } );
-                            break;
-                        default:
-                            break;
-                    }
+                    elem.css( {
+                        '-webkit-transform': 'translate( ' + scrollTop * koefX + 'px, 0px )',
+                        'transform': 'translate( ' + scrollTop * koefX + 'px, 0px )'
+                    } );
+                } );
+
+                $('.services__subtitle').each( function () {
+                    var elem = $(this),
+                        koefY = .05;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koefY + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koefY + 'px )'
+                    } );
+                } );
+
+                $('.services__description').each( function () {
+                    var elem = $(this),
+                        koefY = .1;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koefY + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koefY + 'px )'
+                    } );
                 } );
 
             },

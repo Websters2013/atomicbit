@@ -1,12 +1,8 @@
 .site {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
   font-size: 100px;
   min-width: 320px;
   @include prompt;
-  overflow: hidden;
 
   &__header{
     position: absolute;
