@@ -1,15 +1,18 @@
 .site {
   overflow: hidden;
-  font-size: 100px;
   min-width: 320px;
   @include prompt;
+  z-index: 2;
 
   &__header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 22px;
+    z-index: 3;
+    -webkit-transition: background-color .3s ease, padding .3s ease;
+    transition: background-color .3s ease, padding .3s ease;
 
     &-wrap{
       display: flex;
@@ -17,10 +20,16 @@
       align-items: center;
     }
 
+    &.fixed{
+      position: fixed;
+      padding: 5px 22px;
+      background-color: #fff;
+    }
+
   }
 
   &__footer{
-    padding: 20px 22px;
+    padding: 41px 48px;
   }
 
 }
@@ -35,8 +44,7 @@
   .site {
 
     &__header{
-      position: relative;
-      padding: 50px calc( 50% - 655px ) 20px;
+      padding: 50px calc( 50% - 668px ) 20px;
 
       &-wrap{
         position: relative;
@@ -49,7 +57,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 50px calc( 50% - 655px ) 20px;
+      padding: 73px calc( 50% - 675px) 51px;
     }
 
   }

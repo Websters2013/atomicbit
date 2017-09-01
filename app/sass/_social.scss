@@ -1,4 +1,10 @@
 .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 229px;
+  margin: 0 auto;
+  margin-left: -5px;
 
   svg{
     width: 20px;
@@ -15,6 +21,12 @@
 
 @media (min-width: $desktop) {
   .social {
+    margin: 0;
+    margin-left: -56px;
+
+    a{
+      margin: 0 25px;
+    }
 
   }
 }

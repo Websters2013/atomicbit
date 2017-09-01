@@ -35,8 +35,8 @@ let paths = {
     ],
     vendorScripts: 'app/js/vendors/**/*.js',
     watchScripts: 'app/js/**/*.js',
-    images: 'app/img/**/*',
-    pictures: 'app/pic/**/*',
+    // images: 'app/img/**/*',
+    // pictures: 'app/pic/**/*',
     php: 'app/php/**/*',
     fonts: 'app/fonts/**/*'
 };
@@ -105,22 +105,22 @@ gulp.task( 'scripts', function () {
     }
 });
 
-gulp.task('images', function() {
+/*gulp.task('images', function() {
     return gulp.src(paths.images)
-        .pipe(imagemin({optimizationLevel: 5}))
+        .pipe(imagemin({}))
         .pipe(gulp.dest(`${ distPath }/img`));
-});
+});*/
 
-gulp.task('pictures', function() {
+/*gulp.task('pictures', function() {
     return gulp.src(paths.pictures)
-        .pipe(imagemin({optimizationLevel: 5}))
+        .pipe(imagemin({}))
         .pipe(gulp.dest(`${ distPath }/pic`));
-});
+});*/
 
 gulp.task('watch', function() {
     gulp.watch(paths.watchScripts,   ['scripts', browserSync.reload]);
-    gulp.watch(paths.images,         ['images',  browserSync.reload]);
-    gulp.watch(paths.pictures,       ['pictures',  browserSync.reload]);
+    // gulp.watch(paths.images,         ['images',  browserSync.reload]);
+    // gulp.watch(paths.pictures,       ['pictures',  browserSync.reload]);
     gulp.watch(paths.fonts,          ['fonts']);
     gulp.watch(paths.styles,         ['styles', browserSync.reload]);
     gulp.watch(paths.vendorStyles,   [ 'vendorStyles' ]);
@@ -128,7 +128,7 @@ gulp.task('watch', function() {
 });
 
 function serve() {
-    return run('styles', 'scripts', 'vendorScripts', 'vendorStyles', 'php', 'fonts',  'images', 'pictures', 'views', 'serve');
+    return run('styles', 'scripts', 'vendorScripts', 'vendorStyles', 'php', 'fonts' /*,  'images','pictures'*/, 'views', 'serve');
 }
 
 gulp.task('default', ['clean'], serve());
