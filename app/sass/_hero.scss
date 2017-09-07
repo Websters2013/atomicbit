@@ -129,7 +129,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 60px;
+      padding-top: 56px;
       width: 100%;
       height: 100%;
 
@@ -141,7 +141,7 @@
         height: 97%;
         width: 100%;
         max-width: 1440px;
-        background: url('../img/bg-hero.png') no-repeat 50% calc( 50% + 220px );
+        background: url('../img/bg-hero.png') no-repeat 50% calc( 50% + 206px );
         background-size: 100% auto;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
@@ -173,10 +173,11 @@
 
     &__logo{
       top: 0;
+      margin-bottom: 74px;
       transform: translate(0px, 21.6px);
 
       &-img{
-        margin-top: -10vh;
+        margin-top: -227px;
         left: calc( 50% - 272px );
         width: 542px;
         height: 588.5px;
@@ -184,11 +185,12 @@
 
       &-name{
         position: relative;
-        width: 1134px;
+        width: 1000px;
+        height: 119px;
 
         &-clarification{
-          top: -100%;
-          height: 200%;
+          top: -250%;
+          height: 400%;
           transition: opacity .01s linear;
 
           &:after{

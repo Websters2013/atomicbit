@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1026px" height="269px" viewBox="0 0 1026 269" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>dotted-path-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.267059949%" y1="0.267059949%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#514CE3" offset="0%"></stop>
+            <stop stop-color="#4CC8F6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="website-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.501245471" stroke-dasharray="1,12">
+        <g id="Services-page" transform="translate(-205.000000, -1415.000000)" stroke="url(#linearGradient-1)" stroke-width="3">
+            <path d="M206.523408,1681.66132 C386.733291,1681.58912 558.545851,1637.5173 721.961087,1549.44585 C885.376322,1461.37441 1057.04816,1417.33868 1236.97659,1417.33868" id="dotted-path-1"></path>
+        </g>
+    </g>
+</svg>
