@@ -1,23 +1,23 @@
 .popup {
   display: block;
   opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  z-index: 10000;
-  padding-top: 40px;
+  z-index: -1;
   background-color: rgba(43,43,43,.9);
   text-align: center;
-  transition: opacity 500ms ease-in-out;
   overflow: hidden;
   overflow-y: scroll;
+  width: 100%;
 
   &_opened {
     opacity: 1;
-    width: 100%;
-    height: 100%;
+    visibility: visible;
+    z-index: 10;
+    -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   }
 
   &_hide {
@@ -29,24 +29,22 @@
   &__wrap {
     position: relative;
     z-index: 2;
-    width: 527px;
+    width: 100%;
     margin: 0 auto;
-    padding-bottom: 40px;
   }
 
   &__content {
-    display: none;
     text-align: left;
-    padding: 20px 0;
   }
 
   &__close {
     position: absolute;
-    top: 17px;
-    width: 15px;
-    height: 15px;
-    right: 18px;
+    top: 21px;
+    right: 23px;
+    width: 28px;
+    height: 28px;
     text-indent: -5000px;
+    z-index: 2;
     cursor: pointer;
 
     &:after,
@@ -55,25 +53,24 @@
       top: 50%;
       left: 0;
       right: 0;
-      height: 3px;
+      height: 1px;
       background: $popup-close-back;
       transform-origin: center;
       content: '';
     }
+
     &:after{
       transform: translateY( 50% ) rotate( 45deg );
     }
+
     &:before {
       transform: translateY( 50% ) rotate( -45deg );
-    }
-
-    &:hover {
-      opacity: 0.8;
     }
 
     &:active {
       background-position: 0 bottom;
     }
+
   }
 
   &__scrollbar-measure {
@@ -84,4 +81,33 @@
     height: 100px;
   }
 
+}
+
+@media (min-width: $tablet-portrait) {
+  .popup {
+
+    &__content {
+
+    }
+
+    &__close{
+      top: 38px;
+      left: 43px;
+      width: 60px;
+      height: 60px;
+
+      &:after,
+      &:before{
+        height: 4px;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+    }
+
+  }
 }

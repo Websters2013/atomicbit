@@ -12,11 +12,132 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
 
+    <style>
+
+        /*------------preloader---------*/
+        .preloader {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+        }
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader__wrap {
+            position:absolute;
+            width:100px;
+            height: 118px;
+            left:50%;
+            top:50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            perspective: 1000px;
+        }
+        .preloader__wrap > img {
+            position:absolute;
+            width: 100%;
+            transform-style: preserve-3d;
+            -webkit-animation: flip 3s infinite;
+            animation: flip 3s infinite;
+        }
+        .preloader__bar {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 6px;
+            background: #0072ff;
+            -webkit-transition: opacity .3s ease-in-out;
+            transition: opacity .3s ease-in-out;
+        }
+        .preloader.hide .preloader__bar {
+            opacity: 0;
+        }
+        @-webkit-keyframes flip {
+            0% {
+                -webkit-transform: rotateY(0deg);
+            }
+            30% {
+                -webkit-transform: rotateY(180deg);
+            }
+            50% {
+                -webkit-transform: rotateY(180deg);
+            }
+            80% {
+                -webkit-transform: rotateY(360deg);
+            }
+            100% {
+                -webkit-transform: rotateY(360deg);
+            }
+        }
+        @keyframes flip {
+            0% {
+                transform: rotateY(0deg);
+            }
+            30% {
+                transform: rotateY(180deg);
+            }
+            50% {
+                transform: rotateY(180deg);
+            }
+            80% {
+                transform: rotateY(360deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        /*------------/preloader---------*/
+
+        @media (min-width: 992px) {
+
+            /*---------preloader--------*/
+            .preloader__wrap {
+                position:absolute;
+                width:200px;
+                height: 237px;
+                left:50%;
+                top:50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            /*---------/preloader--------*/
+
+        }
+
+    </style>
+
 </head>
 <body>
 
     <!-- site -->
     <div class="site">
+
+        <!--preloader-->
+        <div class="preloader" data-delay="0">
+
+            <!--preloader__wrap-->
+            <div class="preloader__wrap">
+
+                <img src="img/logo_sign@2x.png" alt="preloader"/>
+
+            </div>
+            <!--/preloader__wrap-->
+
+            <!--preloader__bar-->
+            <div class="preloader__bar"></div>
+            <!--/preloader__bar-->
+
+        </div>
+        <!--/preloader-->
 
         <!-- site__header -->
         <div class="site__header">
@@ -73,21 +194,58 @@
                         <li><a href="#" class="menu__item">Portfolio</a></li>
                         <li>
                             <a href="#" class="menu__item">Services</a>
+
+                            <!-- sub-menu -->
                             <div class="sub-menu">
+
+                                <div class="sub-menu__prev">
+                                    <svg viewBox="0 0 40 14">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Case-study-page" transform="translate(-147.000000, -163.000000)" fill="#6C798B">
+                                                <g id="back" transform="translate(118.000000, 140.000000)">
+                                                    <path d="M30.73367,29.5996633 L68.1265752,29.5996633 L68.1265752,30.5424723 L30.8758057,30.5424723 L36.6666667,36.3333333 L36,37 L29,30 L36,23 L36.6666667,23.6666667 L30.73367,29.5996633 Z M30.4142136,29.9191198 L30.3333333,30 L30.4142136,30.0808802 L30.4142136,29.9191198 Z" id="arrow-left-slider"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
 
                                 <div class="sub-menu__swiper swiper-container">
 
                                     <div class="swiper-wrapper">
 
-                                        <a href="#" class="sub-menu__item swiper-slide">Brand & Strategy</a>
-                                        <a href="#" class="sub-menu__item swiper-slide">Website Development</a>
-                                        <a href="#" class="sub-menu__item swiper-slide">Lead Generation</a>
+                                        <a href="#digital-marketing" class="sub-menu__item swiper-slide">Digital Marketing</a>
+                                        <a href="#brand-strategy" class="sub-menu__item swiper-slide">Brand & Strategy</a>
+                                        <a href="#website-development" class="sub-menu__item swiper-slide">Website Development</a>
+                                        <a href="#lead-generation" class="sub-menu__item swiper-slide">Lead Generation</a>
+                                        <a href="#paid-search-advertising" class="sub-menu__item swiper-slide">Paid Search Advertising</a>
+                                        <a href="#search-engine-optimization" class="sub-menu__item swiper-slide">Search Engine Optimization</a>
+                                        <a href="#traditional-advertising" class="sub-menu__item swiper-slide">Traditional Advertising</a>
+                                        <a href="#social-media" class="sub-menu__item swiper-slide">Social Media</a>
+                                        <a href="#graphic-design" class="sub-menu__item swiper-slide">Graphic Design</a>
+                                        <a href="#video-production" class="sub-menu__item swiper-slide">Video Production</a>
 
                                     </div>
 
                                 </div>
 
+                                <div class="sub-menu__next">
+                                    <svg viewBox="0 0 83 30">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Case-study-page" transform="translate(-1308.000000, -1460.000000)" fill="#6C798B">
+                                                <g id="goal-section" transform="translate(130.000000, 1040.000000)">
+                                                    <g id="slider" transform="translate(378.000000, 0.000000)">
+                                                        <path d="M879.32233,434 L866.736544,421.414214 L868.150758,420 L883,434.849242 L868.150758,449.698485 L866.736544,448.284271 L879.020815,436 L800,436 L800,434 L879.32233,434 Z M880,434.67767 L880,435.020815 L880.171573,434.849242 L880,434.67767 Z" id="arrow-right-slider"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+
                             </div>
+                            <!-- /sub-menu -->
+
                         </li>
                         <li><a href="#" class="menu__item">Blog</a></li>
                         <li><a href="#" class="menu__item">About</a></li>
@@ -97,7 +255,7 @@
                 <!-- /menu -->
 
                 <!-- contact-us -->
-                <a href="#" class="contact-us-btn btn popup__open" data-popup="contact-us"><span><span>Contact us</span></span></a>
+                <a href="#" class="contact-us-btn popup__open" data-popup="contact-us"><span><span>Contact us</span></span></a>
                 <!-- /contact-us -->
 
             </div>
@@ -125,8 +283,13 @@
                     <div class="hero__logo-name">
                         <img src="img/hero-logo-name.png" alt="img"/>
 
+                        <div class="hero__logo-name-clarification"></div>
 
-                        <div class="hero__logo-name-shadow"></div>
+                        <!-- hero__logo-name-shadow -->
+                        <div class="hero__logo-shadow">
+                            <img src="img/hero-shadows-first.png" alt="img"/>
+                        </div>
+                        <!-- /hero__logo-name-shadow -->
 
                     </div>
                     <!-- /hero__logo-name -->
@@ -372,33 +535,79 @@
             <!-- popup__content -->
             <div class="popup__content popup__contact-us">
 
+                <a href="#" class="popup__close"></a>
+
                 <!-- contact-us -->
                 <div class="contact-us">
 
-                    <div class="contact-us__title">
-                        <h2>Get in Touch</h2>
-                        <span>Send Us a Letter</span>
+                    <!-- contact-us__wrap -->
+                    <div class="contact-us__wrap">
+
+                        <div class="contact-us__title">
+                            <h2>Get in Touch</h2>
+                            <span>Send Us a Letter</span>
+                        </div>
+
+                        <!-- contact-us__form -->
+                        <form method="get" class="contact-us__form">
+                            <input type="text" name="name" placeholder="First Name" data-required/>
+                            <input type="text" name="surname" placeholder="Last Name" data-required/>
+                            <input type="email" name="email" placeholder="Email" data-required/>
+                            <input type="text" name="phone" placeholder="Phone Number" data-required/>
+                            <input type="text" name="company" placeholder="Company" data-required/>
+                            <input type="text" name="website" placeholder="Website" data-required/>
+                            <select data-required name="service">
+                                <option value="0">Service I’m interested in</option>
+                                <option value="1">Website</option>
+                                <option value="2">Website</option>
+                            </select>
+                            <textarea name="scope" placeholder="Project scope"></textarea>
+
+                            <button type="submit" class="btn btn_1"><span><span>submit</span></span></button>
+
+                        </form>
+                        <!-- /contact-us__form -->
+
+                        <!-- get-in-touch -->
+                        <div class="get-in-touch">
+
+                            <div>
+
+                                <svg viewBox="0 0 17 24">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-51.000000, -2879.000000)" fill="#6C798B">
+                                            <path d="M52.7,2882.42857 C51.7611159,2882.42857 51,2881.66106 51,2880.71429 C51,2879.76751 51.7611159,2879 52.7,2879 C53.6388841,2879 54.4,2879.76751 54.4,2880.71429 C54.4,2881.66106 53.6388841,2882.42857 52.7,2882.42857 Z M59.5,2882.42857 C58.5611159,2882.42857 57.8,2881.66106 57.8,2880.71429 C57.8,2879.76751 58.5611159,2879 59.5,2879 C60.4388841,2879 61.2,2879.76751 61.2,2880.71429 C61.2,2881.66106 60.4388841,2882.42857 59.5,2882.42857 Z M66.3,2882.42857 C65.3611159,2882.42857 64.6,2881.66106 64.6,2880.71429 C64.6,2879.76751 65.3611159,2879 66.3,2879 C67.2388841,2879 68,2879.76751 68,2880.71429 C68,2881.66106 67.2388841,2882.42857 66.3,2882.42857 Z M52.7,2889.28571 C51.7611159,2889.28571 51,2888.5182 51,2887.57143 C51,2886.62465 51.7611159,2885.85714 52.7,2885.85714 C53.6388841,2885.85714 54.4,2886.62465 54.4,2887.57143 C54.4,2888.5182 53.6388841,2889.28571 52.7,2889.28571 Z M59.5,2889.28571 C58.5611159,2889.28571 57.8,2888.5182 57.8,2887.57143 C57.8,2886.62465 58.5611159,2885.85714 59.5,2885.85714 C60.4388841,2885.85714 61.2,2886.62465 61.2,2887.57143 C61.2,2888.5182 60.4388841,2889.28571 59.5,2889.28571 Z M66.3,2889.28571 C65.3611159,2889.28571 64.6,2888.5182 64.6,2887.57143 C64.6,2886.62465 65.3611159,2885.85714 66.3,2885.85714 C67.2388841,2885.85714 68,2886.62465 68,2887.57143 C68,2888.5182 67.2388841,2889.28571 66.3,2889.28571 Z M52.7,2896.14286 C51.7611159,2896.14286 51,2895.37535 51,2894.42857 C51,2893.4818 51.7611159,2892.71429 52.7,2892.71429 C53.6388841,2892.71429 54.4,2893.4818 54.4,2894.42857 C54.4,2895.37535 53.6388841,2896.14286 52.7,2896.14286 Z M59.5,2896.14286 C58.5611159,2896.14286 57.8,2895.37535 57.8,2894.42857 C57.8,2893.4818 58.5611159,2892.71429 59.5,2892.71429 C60.4388841,2892.71429 61.2,2893.4818 61.2,2894.42857 C61.2,2895.37535 60.4388841,2896.14286 59.5,2896.14286 Z M59.5,2903 C58.5611159,2903 57.8,2902.23249 57.8,2901.28571 C57.8,2900.33894 58.5611159,2899.57143 59.5,2899.57143 C60.4388841,2899.57143 61.2,2900.33894 61.2,2901.28571 C61.2,2902.23249 60.4388841,2903 59.5,2903 Z M66.3,2896.14286 C65.3611159,2896.14286 64.6,2895.37535 64.6,2894.42857 C64.6,2893.4818 65.3611159,2892.71429 66.3,2892.71429 C67.2388841,2892.71429 68,2893.4818 68,2894.42857 C68,2895.37535 67.2388841,2896.14286 66.3,2896.14286 Z" id="icon-phone"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <a href="tel:9793336845">979-333-6845</a>
+
+                            </div>
+
+                            <div>
+
+                                <svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-49.000000, -2940.000000)" fill="#6C798B">
+                                            <path d="M54,2958.875 C52.4999925,2958.19166 51.3333375,2957.18334 50.5,2955.85 C49.6666625,2954.51666 49.25,2952.89168 49.25,2950.975 C49.25,2948.85832 49.6874956,2946.97917 50.5625,2945.3375 C51.4375044,2943.69583 52.6916585,2942.42084 54.325,2941.5125 C55.9583415,2940.60416 57.8666557,2940.15 60.05,2940.15 C63.050015,2940.15 65.3749918,2940.88749 67.025,2942.3625 C68.6750083,2943.83751 69.5,2945.94165 69.5,2948.675 C69.5,2949.87501 69.3375016,2950.975 69.0125,2951.975 C68.6874984,2952.975 68.2041699,2953.775 67.5625,2954.375 C66.9208301,2954.975 66.1416713,2955.275 65.225,2955.275 C64.5916635,2955.275 64.008336,2955.1 63.475,2954.75 C62.941664,2954.4 62.6000007,2953.925 62.45,2953.325 C62.0833315,2953.95834 61.5750033,2954.44166 60.925,2954.775 C60.2749967,2955.10833 59.5333375,2955.275 58.7,2955.275 C57.4499938,2955.275 56.4375039,2954.89167 55.6625,2954.125 C54.8874961,2953.35833 54.5,2952.26667 54.5,2950.85 C54.5,2949.74999 54.7249977,2948.74584 55.175,2947.8375 C55.6250023,2946.92916 56.2708291,2946.2125 57.1125,2945.6875 C57.9541709,2945.1625 58.941661,2944.9 60.075,2944.9 C60.6916698,2944.9 61.3291634,2944.96667 61.9875,2945.1 C62.6458366,2945.23333 63.2333308,2945.40833 63.75,2945.625 L63.425,2951.625 C63.3749998,2952.325 63.5083318,2952.85416 63.825,2953.2125 C64.1416683,2953.57084 64.599997,2953.75 65.2,2953.75 C66.066671,2953.75 66.6791649,2953.30834 67.0375,2952.425 C67.3958351,2951.54166 67.575,2950.29167 67.575,2948.675 C67.575,2944.02498 65.0666918,2941.7 60.05,2941.7 C58.2666578,2941.7 56.7041734,2942.07916 55.3625,2942.8375 C54.0208266,2943.59584 52.9875036,2944.67499 52.2625,2946.075 C51.5374964,2947.47501 51.175,2949.10832 51.175,2950.975 C51.175,2953.34168 51.8624931,2955.16666 53.2375,2956.45 C54.6125069,2957.73334 56.6166535,2958.375 59.25,2958.375 C60.983342,2958.375 62.5999925,2958.11667 64.1,2957.6 L64.1,2959.075 C62.633326,2959.625 61.0166755,2959.9 59.25,2959.9 C57.24999,2959.9 55.5000075,2959.55834 54,2958.875 Z M61.025,2952.9625 C61.5416692,2952.4375 61.8166665,2951.825 61.85,2951.125 L62.125,2946.8 C61.5416637,2946.56667 60.8416707,2946.45 60.025,2946.45 C58.9249945,2946.45 58.0500033,2946.84583 57.4,2947.6375 C56.7499968,2948.42917 56.425,2949.44999 56.425,2950.7 C56.425,2951.70001 56.6374979,2952.45833 57.0625,2952.975 C57.4875021,2953.49167 58.1083292,2953.75 58.925,2953.75 C59.8083377,2953.75 60.5083307,2953.4875 61.025,2952.9625 Z" id="icon-email"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <a href="mailto:info@atomicbit.com">info@atomicbit.com</a>
+
+                            </div>
+
+                        </div>
+                        <!-- /get-in-touch -->
+
                     </div>
+                    <!-- /contact-us__wrap -->
 
-                    <!-- contact-us__form -->
-                    <form method="get" class="contact-us__form">
-                        <input type="text" placeholder="First Name"/>
-                        <input type="text" placeholder="Last Name"/>
-                        <input type="text" placeholder="Email"/>
-                        <input type="text" placeholder="Phone Number"/>
-                        <input type="text" placeholder="Company"/>
-                        <input type="text" placeholder="Website"/>
-                        <select>
-                            <option value="0">Service I’m interested in</option>
-                            <option value="1">Website</option>
-                            <option value="2    ">Website</option>
-                        </select>
-                        <textarea placeholder="Project scope"></textarea>
-
-                        <button type="submit">submit</button>
-
-                    </form>
-                    <!-- /contact-us__form -->
+                    <!-- map -->
+                    <div class="map" data-map='{"center":[42.790443, -75.560612], "zoom": 14, "points": [ [42.790443, -75.560612] ] }'></div>
+                    <!-- /map -->
 
                 </div>
                 <!-- /contact-us -->
@@ -416,6 +625,7 @@
     <script src="js/vendors/swiper.jquery.min.js"></script>
     <script src="js/vendors/ScrollToPlugin.min.js"></script>
     <script src="js/vendors/TweenMax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAS6f0WBGDAH-5S1Lcp38IaZRgwFFRBAPM&signed_in=false"></script>
     <script src="js/index.min.js"></script>
 </body>
 </html>

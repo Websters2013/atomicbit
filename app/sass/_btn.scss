@@ -2,6 +2,7 @@
   display: inline-block;
   padding: 2px;
   font-size: 13px;
+  border: none;
   background: rgb(81,76,227);
   background: -moz-linear-gradient(-45deg, rgba(81,76,227,1) 0%, rgba(76,200,246,1) 100%);
   background: -webkit-linear-gradient(-45deg, rgba(81,76,227,1) 0%,rgba(76,200,246,1) 100%);
@@ -29,6 +30,7 @@
   }
 
   &_1{
+    position: relative;
     font-size: 14px;
 
     & > span {
@@ -43,6 +45,28 @@
 
     }
 
+    &:before,
+    &:after{
+      position: absolute;
+      bottom: 0;
+      width: 100px;
+      height: 20px;
+      z-index: -1;
+      content: '';
+    }
+
+    &:before{
+      left: 50%;
+      margin-left: -100px;
+      box-shadow: 5px 0 70px #514CE3;
+    }
+
+    &:after{
+      right: 50%;
+      margin-right: -100px;
+      box-shadow: -5px 0 70px #4CC8F6;
+    }
+
   }
 
   &_2{
@@ -50,6 +74,12 @@
     margin: 29px auto 0;
     padding: 1px;
     font-size: 15.3px;
+
+    svg{
+      width: 26.86px;
+      margin-left: 14px;
+    }
+
   }
 
 }
@@ -81,7 +111,7 @@
 
     & > span {
       position: relative;
-      padding: 14px 35px;
+      padding: 14px 38px;
 
       span{
         position: relative;
@@ -112,22 +142,6 @@
     &_1{
       width: 100%;
 
-      & > span{
-        padding: 25px 35px;
-        font-size: 16px;
-      }
-
-      &:before,
-      &:after{
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 100px;
-        height: 20px;
-        z-index: -1;
-        content: '';
-      }
-
       &:before{
         margin-left: -100px;
         box-shadow: 5px 0 70px #514CE3;
@@ -136,6 +150,11 @@
       &:after{
         margin-right: -100px;
         box-shadow: -5px 0 70px #4CC8F6;
+      }
+
+      & > span{
+        padding: 25px 35px;
+        font-size: 16px;
       }
 
     }

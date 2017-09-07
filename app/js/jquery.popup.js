@@ -50,10 +50,8 @@
                 _obj.css( {
                     overflowY: 'hidden'
                 } );
-                _scrollConteiner.css( {
-                    overflowY: 'auto',
-                    paddingRight: 0
-                } );
+
+                _scrollConteiner.removeAttr( 'style' );
 
                 _obj.removeClass( 'popup_opened' );
                 _obj.addClass( 'popup_hide' );
@@ -67,6 +65,11 @@
                     _obj.removeClass( 'popup_hide' );
                 }, 300 );
 
+                $( 'select' )[0].obj.close();
+
+                $( '.site' )[0].obj.setCanUseScroll( true );
+                $( '.site__header' )[0].obj.setCanUseScroll( true );
+
             },
             _init = function(){
                 _obj[ 0 ].obj = _self;
@@ -76,22 +79,22 @@
                 _window.on( {
                     resize: function(){
                         _centerWrap();
+                    },
+                    'keydown': function ( e ) {
+                        switch( e.which ) {
+
+                            case 27:
+                                _hide();
+                                break;
+
+                            default:
+                                return;
+                        }
                     }
                 } );
                 _btnShow.on( {
                     click: function(){
                         _show( $( this ).attr( 'data-popup' ) );
-                        return false;
-                    }
-                } );
-                _wrap.on( {
-                    click: function( e ){
-                        e.stopPropagation();
-                    }
-                } );
-                _obj.on( {
-                    click: function(){
-                        _hide();
                         return false;
                     }
                 } );
@@ -109,8 +112,14 @@
                     overflowY: 'hidden',
                     paddingRight: _getScrollWidth()
                 } );
+
                 _obj.addClass( 'popup_opened' );
                 _centerWrap();
+
+                google.maps.event.trigger( $( '.map' )[0] , 'resize');
+
+                $( '.site' )[0].obj.setCanUseScroll( false );
+                $( '.site__header' )[0].obj.setCanUseScroll( false );
 
             },
             _setPopupContent = function( className ){
@@ -124,8 +133,8 @@
 
         //public methods
 
-
         _init();
     };
+
 } )();
 

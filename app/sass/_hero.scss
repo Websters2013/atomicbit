@@ -29,17 +29,15 @@
     &-img{
       position: absolute;
       top: -8vh;
-      left: 50%;
+      left: calc( 50% - 75px );
       width: 149px;
       height: 163px;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
     }
 
     &-name{
       width: 310px;
 
-      &-shadow{
+      &-clarification{
         position: absolute;
         top: -100%;
         left: 0;
@@ -51,6 +49,10 @@
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
       }
 
+    }
+
+    &-shadow{
+      display: none;
     }
 
   }
@@ -127,7 +129,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 35px;
+      padding-top: 60px;
       width: 100%;
       height: 100%;
 
@@ -139,7 +141,7 @@
         height: 97%;
         width: 100%;
         max-width: 1440px;
-        background: url('../img/bg-hero.png') no-repeat center -32px;
+        background: url('../img/bg-hero.png') no-repeat 50% calc( 50% + 220px );
         background-size: 100% auto;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
@@ -149,9 +151,24 @@
     }
 
     &__title{
+      position: relative;
       max-width: 100%;
       font-size: 36px;
       line-height: 54px;
+
+      &:before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -130px;
+        width: 528px;
+        height: 187px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: url( '../img/hero-shadows-second.png' ) no-repeat center;
+        background-size: cover;
+      }
+
     }
 
     &__logo{
@@ -159,15 +176,17 @@
       transform: translate(0px, 21.6px);
 
       &-img{
-        top: -18vh;
+        margin-top: -10vh;
+        left: calc( 50% - 272px );
         width: 542px;
         height: 588.5px;
       }
 
       &-name{
-        width: 1006px;
+        position: relative;
+        width: 1134px;
 
-        &-shadow{
+        &-clarification{
           top: -100%;
           height: 200%;
           transition: opacity .01s linear;
@@ -189,8 +208,36 @@
 
       }
 
+      &-shadow{
+        display: block;
+        position: absolute;
+        left: calc( 50% - 125px);
+        opacity: 0;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+        bottom: -190px;
+        width: 251px;
+        height: 210px;
+
+        img{
+          display: block;
+          width: 100%;
+        }
+
+      }
+
       &.topper{
         z-index: 1;
+
+        &:before,
+        &:after{
+          opacity: 1;
+        }
+
+        .hero__logo-shadow{
+          opacity: 1;
+        }
+
       }
 
     }

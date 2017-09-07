@@ -29,7 +29,9 @@ let paths = {
                 'app/js/jquery.main.js',
                 'app/js/jquery.index.js',
                 'app/js/jquery.popup.js',
-                'app/js/jquery.websters-select.js'
+                'app/js/jquery.websters-select.js',
+                'app/js/jquery.map.js',
+                'app/js/jquery.form.validator.js'
             ]
         }
     ],
