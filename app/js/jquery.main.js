@@ -27,7 +27,7 @@
         } );
 
         $.each( $( '.sub-menu' ), function () {
-            new Sliders( $(this) );
+            new Sliders( $( this ) );
             new SubMenu( $( this ) );
         } );
 
@@ -193,7 +193,10 @@
         //private properties
         var _obj = obj,
             _btn = $( '.menu-mobile-btn' ),
+            _header = $( '.site__header ' ),
             _html = $( 'html' ),
+            _body = $( 'body' ),
+            _window = $( window ),
             _closeBtn = _obj.find( '.menu__close' );
 
         //private methods
@@ -215,11 +218,31 @@
             },
             _openMenu = function(){
                 _obj.addClass( 'visible' );
-                _html.css( 'overflow-y', 'hidden' )
+                // _obj.css( 'height', _window.outerHeight() );
+                // _window.css( 'overflow-y', 'hidden' );
+                _html.css( 'overflow-y', 'hidden' );
+
+                _body.on( 'touchmove', function () {
+                    return false;
+                } );
+
+                _obj.on( 'touchmove', function () {
+                    return true;
+                } );
+
+                $( '.site__header' )[0].obj.setCanUseScroll( false );
+                $( '.site' )[0].obj.setCanUseScroll( false );
+
             },
             _closeMenu = function(){
                 _obj.removeClass( 'visible' );
+                // _obj.removeAttr( 'style' );
                 _html.removeAttr( 'style' );
+                _body.removeAttr( 'style' );
+
+                $( '.site__header' )[0].obj.setCanUseScroll( true );
+                $( '.site' )[0].obj.setCanUseScroll( true );
+
             };
 
         //public properties
@@ -326,7 +349,7 @@
         //private methods
         var _initSlider = function() {
 
-                if ( _window < 1200 ){
+                if ( _window.outerWidth() < 1200 ){
 
                     _subMenu = new Swiper ( _subMenuSwiper, {
                         autoplay: false,
@@ -335,6 +358,7 @@
                         slidesPerView: 'auto',
                         loopAdditionalSlides: 0,
                         loop: false,
+                        spaceBetween: 36,
                         onInit: function () {
 
                             var activeSlide = _subMenuItem.filter( '.active' ).index();
@@ -655,7 +679,7 @@
 
             },
             _siteScroll = function( event ) {
-                var scrollTime = 1.2,
+                var scrollTime = 0.2,
                     scrollDistance = 170,
                     delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3,
                     scrollTop = _window.scrollTop(),

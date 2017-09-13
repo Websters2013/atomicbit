@@ -147,6 +147,18 @@
 
     &-content {
       padding: 0 25px;
+
+      .btn{
+        width: 100%;
+        margin-top: 32px;
+
+        & > span{
+          padding: 18px 35px;
+          font-size: 14px;
+        }
+
+      }
+
     }
 
     &-title {
@@ -167,6 +179,24 @@
 }
 @media (min-width: $tablet-portrait) {
   .services {
+
+    &__item {
+
+      &-content {
+
+        .btn{
+          width: auto;
+
+          & > span{
+            padding: 9px 20px;
+            font-size: 13px;
+          }
+
+        }
+
+      }
+
+    }
 
   }
 }

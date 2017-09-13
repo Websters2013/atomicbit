@@ -78,6 +78,12 @@
     svg{
       width: 26.86px;
       margin-left: 14px;
+
+      g{
+        -webkit-transition: fill .2s ease;
+        transition: fill .2s ease;
+      }
+
     }
 
   }
@@ -105,6 +111,10 @@
           -webkit-text-fill-color: transparent;
         }
 
+      }
+
+      svg g{
+        fill: #fff;
       }
 
     }

@@ -112,10 +112,9 @@
 
   &__pagination{
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 18px;
+    margin: 0 -15px 18px;
 
     &-item{
       width: 100%;
@@ -125,25 +124,25 @@
       line-height: 30px;
       font-weight: 100;
 
-      div:first-child{
-        font-size: 24px;
-        line-height: 40px;
-        font-weight: 900;
-        letter-spacing: 5px;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
+      div{
+
+        &:first-child {
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 900;
+          letter-spacing: 5px;
+          -webkit-transition: opacity .3s ease;
+          transition: opacity .3s ease;
+        }
+
+        &:nth-child(2){
+          display: none;
+        }
+
       }
 
       &:nth-child(2){
         text-align: right;
-      }
-
-      &:hover{
-
-        div:first-child{
-          opacity: .5;
-        }
-
       }
 
       &.disable{
@@ -179,7 +178,7 @@
     &__quote{
       float: left;
       width: 505px;
-      margin: 21px 57px 0 -12px;
+      margin: 21px 57px 10px -12px;
       padding: 58px 58px 68px;
       font-size: 24px;
       line-height: 40px;
@@ -196,12 +195,21 @@
     }
 
     &__img{
-      width: 445px;
-      margin: 16px -12px 0 57px;
+      margin-bottom: 58px;
+
+      &-right{
+        width: 445px;
+        margin: 16px -12px 0 57px;
+      }
+
+      &-left{
+        width: 445px;
+        margin: 16px 57px 0 -12px;
+      }
+
     }
 
     &__pagination{
-      flex-direction: row;
       margin: 0 -5px 103px 0;
       background: url(../img/logo_sign@2x.png) no-repeat center;
       background-size: 50px;
@@ -209,6 +217,20 @@
       &-item {
         width: 240px;
         margin-bottom: 0;
+
+        & > div{
+
+          &:first-child{
+            font-size: 24px;
+            line-height: 40px;
+          }
+
+          &:nth-child(2){
+            display: block;
+          }
+
+        }
+
       }
 
     }
@@ -250,10 +272,31 @@
     }
 
     &__img{
-      margin-right: -163px;
+
+      &-right{
+        margin-right: -163px;
+      }
+
+      &-left{
+        margin-left: -163px;
+      }
+
     }
 
     &__pagination{
+
+      &-item{
+
+        &:hover{
+
+          div:first-child{
+            opacity: .5;
+          }
+
+        }
+
+      }
+
     }
 
   }

@@ -16,6 +16,7 @@
     opacity: 1;
     visibility: visible;
     z-index: 10;
+    height: 100%;
     -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
     transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   }
