@@ -60,10 +60,11 @@
                             curMargin = curBtn.data( 'margin' );
 
                         if ( curMargin == undefined && _window.outerWidth() < 1200 ) {
-                            curMargin = 75
+                            curMargin = 75;
+                            $( '.menu' )[0].obj.closeMenu();
                         } else if ( curMargin == undefined && _window.outerWidth() >= 1200 ) {
                             curMargin = 283
-                        }
+                        };
 
                         _body.animate( {
                             scrollTop: $( curBtn.attr( 'href' ) ).offset().top - curMargin
@@ -192,16 +193,17 @@
 
         //private properties
         var _obj = obj,
+            _self = this,
             _btn = $( '.menu-mobile-btn' ),
-            _header = $( '.site__header ' ),
-            _html = $( 'html' ),
+            _site = $( '.site' ),
             _body = $( 'body' ),
-            _window = $( window ),
+            _topScroll = 0,
             _closeBtn = _obj.find( '.menu__close' );
 
         //private methods
         var _constructor = function(){
                 _onEvents();
+                _obj[0].obj = _self;
             },
             _onEvents = function(){
 
@@ -217,17 +219,14 @@
 
             },
             _openMenu = function(){
+
+                _topScroll =  _body.scrollTop();
+
                 _obj.addClass( 'visible' );
-                // _obj.css( 'height', _window.outerHeight() );
-                // _window.css( 'overflow-y', 'hidden' );
-                _html.css( 'overflow-y', 'hidden' );
-
-                _body.on( 'touchmove', function () {
-                    return false;
-                } );
-
-                _obj.on( 'touchmove', function () {
-                    return true;
+                _body.css( 'overflow-y', 'hidden' );
+                _site.css( {
+                    'position': 'relative',
+                    'top': _topScroll * -1
                 } );
 
                 $( '.site__header' )[0].obj.setCanUseScroll( false );
@@ -236,9 +235,10 @@
             },
             _closeMenu = function(){
                 _obj.removeClass( 'visible' );
-                // _obj.removeAttr( 'style' );
-                _html.removeAttr( 'style' );
+                _site.removeAttr( 'style' );
                 _body.removeAttr( 'style' );
+
+                _body.scrollTop( _topScroll );
 
                 $( '.site__header' )[0].obj.setCanUseScroll( true );
                 $( '.site' )[0].obj.setCanUseScroll( true );
@@ -248,6 +248,9 @@
         //public properties
 
         //public methods
+        _self.closeMenu = function () {
+            _closeMenu();
+        };
 
         _constructor();
 
@@ -358,6 +361,7 @@
                         slidesPerView: 'auto',
                         loopAdditionalSlides: 0,
                         loop: false,
+                        preventClicks: false,
                         spaceBetween: 36,
                         onInit: function () {
 
