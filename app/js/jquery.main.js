@@ -650,36 +650,40 @@
 
                 var scrollTop = 0;
 
-                $('.hero__logo').removeClass( 'topper' );
+                if ( _window.outerWidth() > 1200 ){
 
-                $('.hero__logo-img').each( function () {
-                    var elem = $(this),
-                        koefY = -.8;
+                    $('.hero__logo').removeClass( 'topper' );
 
-                    elem.css( {
-                        'top': scrollTop * koefY
-                    } );
-                } );
+                    $('.hero__logo-img').each( function () {
+                        var elem = $(this),
+                            koefY = -.8;
 
-                $('.hero__logo-name').each( function () {
-                    var elem = $(this),
-                        koefY = -.2;
-
-                    elem.css( {
-                        'top': scrollTop * koefY
-                    } );
-                } );
-
-                $('.hero__logo-shadow').each( function () {
-                    var elem = $(this),
-                        koef = .002;
-
-                    elem.css( {
-                        '-webkit-transform': 'scale(' + ( scrollTop + 200 ) * koef + ')',
-                        'transform': 'scale(' + ( scrollTop + 200 ) * koef + ')'
+                        elem.css( {
+                            'top': scrollTop * koefY
+                        } );
                     } );
 
-                } );
+                    $('.hero__logo-name').each( function () {
+                        var elem = $(this),
+                            koefY = -.2;
+
+                        elem.css( {
+                            'top': scrollTop * koefY
+                        } );
+                    } );
+
+                    $('.hero__logo-shadow').each( function () {
+                        var elem = $(this),
+                            koef = .002;
+
+                        elem.css( {
+                            '-webkit-transform': 'scale(' + ( scrollTop + 200 ) * koef + ')',
+                            'transform': 'scale(' + ( scrollTop + 200 ) * koef + ')'
+                        } );
+
+                    } );
+
+                }
 
             },
             _siteScroll = function( event ) {

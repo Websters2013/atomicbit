@@ -110,6 +110,10 @@
         cursor: default;
       }
 
+      &:first-child{
+        display: none;
+      }
+
     }
 
   }

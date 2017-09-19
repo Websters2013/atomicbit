@@ -36,28 +36,34 @@
 
   &__promo{
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     max-height: 380px;
+    padding: 40px 20px;
     overflow: hidden;
 
     h1{
-      position: absolute;
-      top: 50%;
-      left: 20px;
+      position: relative;
+      padding-left: 20px;
       max-width: 40%;
       margin-bottom: 41px;
       color: #514CE3;
-      font-size: 10vmin;
+      font-size: 7vmin;
       letter-spacing: .3em;
-      line-height: 40px;
+      line-height: 8vmin;
       font-weight: 900;
       text-transform: uppercase;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
+      z-index: 1;
     }
 
     img{
-      display: block;
-      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
     }
 
   }
@@ -426,6 +432,10 @@
 
     &__info{
       padding: 0 167px 47px 81px;
+    }
+
+    &__promo{
+      padding: 62px 20px;
     }
 
     &__back{
